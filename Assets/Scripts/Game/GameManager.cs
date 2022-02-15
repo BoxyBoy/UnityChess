@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviourSingleton<GameManager> {
 	public static event Action GameEndedEvent;
 	public static event Action GameResetToHalfMoveEvent;
 	public static event Action MoveExecutedEvent;
+	public GameObject TraditionalGameButton;
+	public GameObject Chess960Button;
+	public GameObject GameSelectButtonContainer;
 	
 	public Board CurrentBoard {
 		get {
@@ -74,7 +77,7 @@ public class GameManager : MonoBehaviourSingleton<GameManager> {
 			[GameSerializationType.PGN] = new PGNSerializer()
 		};
 		
-		StartNewGame();
+		//StartNewGame();
 		
 #if DEBUG_VIEW
 		unityChessDebug.gameObject.SetActive(true);
@@ -86,12 +89,30 @@ public class GameManager : MonoBehaviourSingleton<GameManager> {
 		uciEngine?.ShutDown();
 	}
 	
+	public void TraditionalGameOnClick()
+    {
+		StartNewGame(isNormalGame: true);
+    }
+
+	public void Chess960GameOnClick()
+    {
+		StartNewGame(isNormalGame: false);
+	}
+
 #if AI_TEST
 	public async void StartNewGame(bool isWhiteAI = true, bool isBlackAI = true) {
 #else
-	public async void StartNewGame(bool isWhiteAI = false, bool isBlackAI = false) {
+	public async void StartNewGame(bool isWhiteAI = false, bool isBlackAI = false, bool isNormalGame = true) {
 #endif
-		game = new Game();
+		GameSelectButtonContainer.SetActive(false);
+		if(isNormalGame)
+        {
+			game = new Game();
+        }
+        else
+        {
+			game = new Game(/*New params*/);
+        }
 
 		this.isWhiteAI = isWhiteAI;
 		this.isBlackAI = isBlackAI;
