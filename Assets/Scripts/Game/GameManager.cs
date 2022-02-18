@@ -111,6 +111,8 @@ public class GameManager : MonoBehaviourSingleton<GameManager> {
         }
         else
         {
+			Debug.Log("sgeegis");
+			Board.GenerateChess960Board();
 			game = new Game(/*New params*/);
         }
 

@@ -636,6 +636,12 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 2
   m_ShadowAngle: 30
+--- !u!1 &1193943269 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4099689186119705783, guid: caf93e4ddc2f0544cbddf4e2facb7fd7,
+    type: 3}
+  m_PrefabInstance: {fileID: 7463109366908870894}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1382098137
 GameObject:
   m_ObjectHideFlags: 0
@@ -1281,6 +1287,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4099689186119705783, guid: caf93e4ddc2f0544cbddf4e2facb7fd7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4626005267703283125, guid: caf93e4ddc2f0544cbddf4e2facb7fd7,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -1866,6 +1877,11 @@ PrefabInstance:
       propertyPath: TraditionalGameButton
       value: 
       objectReference: {fileID: 7463109366908870896}
+    - target: {fileID: 7463109367895200373, guid: caf93e4ddc2f0544cbddf4e2facb7fd7,
+        type: 3}
+      propertyPath: GameSelectButtonContainer
+      value: 
+      objectReference: {fileID: 1193943269}
     - target: {fileID: 8433262171349199163, guid: caf93e4ddc2f0544cbddf4e2facb7fd7,
         type: 3}
       propertyPath: moveUIPrefab
