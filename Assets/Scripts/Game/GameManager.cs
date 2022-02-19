@@ -111,8 +111,8 @@ public class GameManager : MonoBehaviourSingleton<GameManager> {
         }
         else
         {
-			Board.GenerateChess960Board();
-			game = new Game(/*New params*/);
+			List<(Square, Piece)> chess960Board = Board.GenerateChess960Board();
+			game = new Game(GameConditions.NormalStartingConditions, chess960Board.ToArray());
         }
 
 		this.isWhiteAI = isWhiteAI;
